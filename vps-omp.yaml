@@ -1,0 +1,177 @@
+---
+"$schema": https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+final_space: true
+shell_integration: true
+version: 2
+
+palette:
+
+  light_yellow: "#FFFB38"
+  blue-black: "#193549"
+  light_blue: "#3A86FF"
+  vivid_red: "#F1184C"
+  white: "#FFFFFF"
+  pink: "#FF479C"
+  teal: "#2E9599"
+  grey: "#41545E"
+  plum: "#9A348E"
+
+blocks:
+
+- type: prompt
+  alignment: left
+  segments:
+
+  - type: os
+
+    background: p:light_blue
+    foreground: p:white
+
+    style: diamond
+    leading_diamond: 
+
+    template: " {{.Icon}} "
+
+
+  - type: session
+
+    background: p:light_blue
+    foreground: p:white
+
+    style: powerline
+    powerline_symbol: 
+
+    template: " {{ .UserName }}@{{ .HostName }}"
+
+
+  - type: shell
+
+    background: p:light_blue
+    foreground: p:white
+
+    style: powerline
+    powerline_symbol: 
+
+    template: "in {{ .Name }} "
+
+
+  - type: root
+
+    background: p:light_yellow
+    foreground: p:blue-black
+
+    style: powerline
+    powerline_symbol: 
+
+    template: "  "
+
+
+  - type: path
+
+    background: p:pink
+    foreground: p:white
+
+    style: powerline
+    powerline_symbol: 
+
+    template: "  {{ .Path }} "
+    properties:
+      style: full
+
+
+  - type: time
+
+    background: p:plum
+    foreground: p:white
+
+    style: powerline
+    powerline_symbol: 
+
+    template: " {{ .CurrentDate | date .Format }} "
+    properties:
+      time_format: Monday 3:04 PM
+
+
+  - type: git
+
+    background: p:light_yellow
+    foreground: p:blue-black
+
+    style: powerline
+    powerline_symbol: 
+
+    template: " {{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }}  {{ .StashCount  }}{{ end }} "
+    properties:
+      fetch_stash_count: true
+      fetch_upstream_icon: true
+
+
+  - type: status
+
+    background: p:teal # teal by default
+    background_templates:
+    - "{{ if gt .Code 0 }}p:grey{{ end }}" #grey if error
+    foreground: p:white
+
+    style: diamond
+    trailing_diamond: 
+
+    template: "  "
+    properties:
+      always_enabled: true
+
+
+- type: prompt
+
+  alignment: right
+  segments:
+
+  - type: executiontime
+
+    background: p:teal
+    foreground: p:white
+
+    style: diamond
+    leading_diamond: 
+
+    template: "  {{ .FormattedMs }} "
+    properties:
+      style: round
+      always_enabled: true
+
+
+  - type: sysinfo
+
+    background: p:teal
+    foreground: p:white
+
+    style: powerline
+
+    template: "   {{ .Load1 }} "
+
+
+  - type: sysinfo
+
+    background: p:teal
+    foreground: p:white
+
+    style: diamond
+    trailing_diamond: 
+
+    template: "   {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1048576.0) }}/{{ (div .PhysicalTotalMemory 1048576.0) }}MB "
+
+- type: prompt
+
+  alignment: left
+  newline: true
+  segments:
+
+  - type: text
+
+    foreground: p:vivid_red
+
+    template: " "
+    style: plain
+
+
+---
