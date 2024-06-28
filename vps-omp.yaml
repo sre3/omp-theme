@@ -6,11 +6,11 @@ version: 2
 
 palette:
 
-  white: "#FFFFFF"
   blue-black: "#193549"
   light_blue: "#3A86FF"
   vivid_red: "#F1184C"
   orange: "#FF6202"
+  white: "#FFFFFF"
   pink: "#FF479C"
   teal: "#2E9599"
   grey: "#41545E"
