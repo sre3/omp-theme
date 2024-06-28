@@ -55,17 +55,6 @@ blocks:
     template: "in {{ .Name }} "
 
 
-  - type: root
-
-    background: p:orange
-    foreground: p:blue-black
-
-    style: powerline
-    powerline_symbol: 
-
-    template: "  "
-
-
   - type: path
 
     background: p:pink
@@ -104,6 +93,17 @@ blocks:
     properties:
       fetch_stash_count: true
       fetch_upstream_icon: true
+
+
+  - type: root
+
+    background: p:orange
+    foreground: p:blue-black
+
+    style: powerline
+    powerline_symbol: 
+
+    template: "  "
 
 
   - type: status
