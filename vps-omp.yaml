@@ -6,11 +6,11 @@ version: 2
 
 palette:
 
-  light_yellow: "#FFFB38"
+  white: "#FFFFFF"
   blue-black: "#193549"
   light_blue: "#3A86FF"
   vivid_red: "#F1184C"
-  white: "#FFFFFF"
+  orange: "#FF6202"
   pink: "#FF479C"
   teal: "#2E9599"
   grey: "#41545E"
@@ -57,7 +57,7 @@ blocks:
 
   - type: root
 
-    background: p:light_yellow
+    background: p:orange
     foreground: p:blue-black
 
     style: powerline
